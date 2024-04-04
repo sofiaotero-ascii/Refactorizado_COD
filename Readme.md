@@ -201,12 +201,15 @@ public class Matematicas{
 ```
 
 Podríamos tener una clase de pruebas para la clase `Matematicas`:
+
 ```java
-public class MatematicasTest{
-   @Test
-   public void testSuma(){
-      assertEquals(5, Matematicas.suma(2,3));
-   }
+
+
+public class MatematicasTest {
+    @Test
+    public void testSuma() {
+        assertEquals(5, Matematicas.suma(2, 3));
+    }
 }
 ```
 
