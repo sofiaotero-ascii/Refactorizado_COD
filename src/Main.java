@@ -1,9 +1,6 @@
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(getScore(1, 0));
-    }
     /**
-     * metodo para deolever la puntuacion de tenis
+     * metodo para devolver la puntuacion de tenis
      */
     public static String getScore(int m_score1, int m_score2) {
         String score = "";
