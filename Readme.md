@@ -161,6 +161,7 @@ Debemos estar familiarizados y poner en práctica las convenciones recogidas en 
 ## Bad Smells 
 <details>
 <summary>Descripción</summary>
+
 Se conoce como **Bad Smell o Code Smell** [mal olor](https://es.wikipedia.org/wiki/Hediondez_del_c%C3%B3digo) a algunos indicadores o síntomas del código que posiblemente ocultan un problema más profundo.
 
 Los `bad smells` no son errores de código (bugs), ya que no impiden que el programa funcione correctamente, pero son indicadores de fallos en el diseño del código que dificultan el posterior mantenimiento del mismo y aumentan el riesgo de errores futuros.
