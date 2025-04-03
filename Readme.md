@@ -1,5 +1,15 @@
 # Refactorizacion 
-El término refactorizar dentro del campo de la Ingeniería del Software hace referencia a la modificación del código sin cambiar su funcionamiento. Se emplea para crear un código más claro y sencillo, facilitando la posterior lectura o revision de un programa. Se podría entender como el mantenimiento del código, para facilitar su comprensión, pero sin añadir ni eliminar funcionalidades. **Refactorizar código consiste en crear un código más limpio.**
+El término refactorizar dentro del campo de la Ingeniería del Software hace referencia a la modificación del código sin cambiar su funcionamiento.
+
+Se emplea para crear un código más claro y sencillo, facilitando la posterior lectura o revision de un programa.
+
+Se podría entender como el mantenimiento del código, para facilitar su comprensión, pero sin añadir ni eliminar funcionalidades.
+
+---
+
+<p align="center"><strong>Refactorizar código consiste en crear un código más limpio.</strong></p>
+
+---
 
 ![espagueti](./image/refactoringspagueti.png)
 
@@ -107,8 +117,9 @@ int precioConIva = precioBase + (IVA * precioBase);
 ## Estructura del código
 <details>
 <summary>Descripción</summary>
+
 * Debemos usar la codificación UTF-8
-* En las sentencias de control de flujo (`if, else, for, do-while, try-catch-finally`) se incluyen llaves `{ }`, incluso si no contienen código o es una sola instrucción.
+* En las sentencias de control de flujo (`if, else, for, do-while, try-catch-finally`) se incluyen llaves `{}`, incluso si no contienen código o es una sola instrucción.
  Se alinean las llaves `{}` al inicio de línea.
 
   ```
@@ -119,7 +130,7 @@ int precioConIva = precioBase + (IVA * precioBase);
   }
   ```
 
-* Una sola instrucción por linea.
+* Una sola instrucción por línea.
 * Las líneas de código no deben superar los 100 caracteres. Si no, se deben **romper** antes de algún operador.
 * Si la declaración del método es demasiado larga, o una expresión aritmética es demasiado larga, o en una sentencia `if`, debo romper.
 * Si una operación aritmética o lógica se compone de distintos tipos de operaciones con distinta jerarquía, se deben usar paréntesis para facilitar su legibilidad.
@@ -136,7 +147,7 @@ int precioConIva = precioBase + (IVA * precioBase);
   }
 
   longName1 = longName2 * (longName3 + longName4 - longName5)
-  + (4 * longname6);            // Siempre con el operador al principio de línea
+  + (4 * longname6); // Siempre con el operador al principio de línea
   ```
 
 * Los espacios en blanco mejoran la legibilidad. Se deben colocar entre operadores, después de los puntos y coma de los bucles for, después de los operadores de asignación, etc.
@@ -203,26 +214,6 @@ En la siguiente [página web](https://refactoring.guru/es/refactoring/smells) te
       // instanciación rápida
       String rapida = "objeto string";
       ```
-      
-* *Tipos primitivos mejor que clases `wrapper` (envoltorio)*: Las clases wrapper al ser objetos, proveen de métodos para trabajar mejor con ellas, pero al igual que los Strings, son más lentos que los tipos primitivos.
-
-* *Comparación de objetos*: Recordar que tanto los `Strings` como las tipos `Wrapper` son objetos y sus variables solo contienen sus referencias (direcciones).
-
-* Evitar la creación innecesaria de objetos. Como se ha dicho, generan mucha carga.
-  ```
-  int x = 10;
-  int y = 10;
-
-  Integer x1 = new Integer(10);
-  Integer y1 = new Integer(10);
-
-  String x2 = "hola";
-  String y2 = new String("hola");
-
-  System.out.println(x == y);    // TRUE
-  System.out.println(x1 == y1);  // FALSE, ya que son 2 objetos distintos
-  System.out.println(x2 == y2);  // FALSE, ya que son 2 objetos distintos
-  ```
 
 * **Visibilidad de atributos**: Los campos de una clase 'estándar' no deben declararse nunca como public, ni mucho menos no indicarle un modificador de visibilidad. Se usan sus `setters y getters` para su acceso.
 
@@ -238,11 +229,14 @@ En la siguiente [página web](https://refactoring.guru/es/refactoring/smells) te
 
 * **Bucle for**. Optar por el `for` siempre que se pueda (frente a while, do-while). Las ventajas son que reune todo el control del bucle en la misma linea (inicio, fin, e incremento), y la variable de control ('i') no es accesible desde fuera de él. Si se necesita modificar su variable de control, usar otro bucle.
 
-* **Constantes**: Cualquier valor literal debe ser definido como constante, excepto 1, -1, 0 ó 2 que son usados por el bucle for.
+* **Constantes**: Cualquier valor literal debe ser definido como constante.
 
-* **Switch**: Siempre debe llevar un `break` despues de cada caso, y tambien el caso `default` que ayudará a corregir futuros aumentos del número de casos.
+* **Switch**: Siempre debe llevar un `break` después de cada caso, y también el caso `default` que ayudará a corregir futuros aumentos del número de casos.
 
-* El `copiado defensivo` es salvador. Cuando creamos un constructor que recibe el mismo tipo de objeto de la clase, debemos tener cuidado y crear un nuevo objeto a partir del recibido.
+* La `programación defensiva` es salvadora. Continuamente estamos valorando que puede ir mal en el código, y como evitarlo. Por ejemplo:
+  * Siempre que se pueda, se debe validar la entrada de datos. Si no se valida, el programa puede fallar o dar resultados inesperados.
+  * Se deben lanzar excepciones en caso de errores, y no dejar que el programa falle sin más.
+
 </details>
 
 ## Refactorización en IntelliJ
@@ -289,4 +283,4 @@ Podemos seleccionar diferentes elementos para mostrar su menú de refactorizaci�
 </details>
 
 ----
-(c) Fernando Valdeón
+<sub>[(*artículo original*)](https://entornos.abrilcode.com/doku.php?id=apuntes:refactorizacion)</sub>
